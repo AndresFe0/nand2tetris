@@ -69,7 +69,7 @@ Para 64/128 bits: encadenar 4/8 bloques `ALU16C`, ripple de carry, AND de todos 
 ### Alu 32
 ![alt text](image-3.png)
 ### Resultado de las pruebas
-#### 1 
+#### 
 - ADD simple: 1 + 2 = 3 (sin carry)
   ![alt text](image-5.png)
 - ADD con acarreo: 0x0000FFFF + 0x00000001 = 0x00010000 (carry propaga).
