@@ -1,0 +1,32 @@
+CHIP ALU16C {
+    IN  x[16], y[16], zx, nx, zy, ny, f, no, cIn;
+    OUT out[16], zr, ng, cOut;
+
+    PARTS:
+
+    Not16(in=x, out=notx);
+    Mux4Way16(a=x, b=notx, c[0..15]=false, d[0..15]=true, sel[1]=zx, sel[0]=nx, out=xf);
+
+    Not16(in=y, out=noty);
+    Mux4Way16(a=y, b=noty, c[0..15]=false, d[0..15]=true, sel[1]=zy, sel[0]=ny, out=yf);
+
+    And16(a=xf, b=yf, out=andOut);
+
+    Add16Carry(a=xf, b=yf, cIn=cIn, out=addOut, cOut=carryAdd);
+
+
+    Mux16(a=andOut, b=addOut, sel=f, out=preOut);
+
+
+    Not16(in=preOut, out=notPreOut);
+    Mux16(a=preOut, b=notPreOut, sel=no, out=out, out[15]=ng, out[0..7]=outLow8, out[8..15]=outHigh8);
+
+
+    Or8Way(in=outLow8,  out=orLow8);
+    Or8Way(in=outHigh8, out=orHigh8);
+    Or(a=orLow8, b=orHigh8, out=orAny);
+    Not(in=orAny, out=zr);
+
+
+    And(a=f, b=carryAdd, out=cOut);
+}

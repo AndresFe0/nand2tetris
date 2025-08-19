@@ -1,0 +1,24 @@
+CHIP ALU32 {
+    IN  x[32], y[32], zx, nx, zy, ny, f, no;
+    OUT out[32], zr, ng, overflow;
+
+    PARTS:
+   ALU16C(x=x[0..15], y=y[0..15], zx=zx, nx=nx, zy=zy, ny=ny, f=f, no=no, cIn=false, out=low, zr=zrLow, ng=ngLow, cOut=carryLow);
+
+    And(a=f, b=carryLow, out=carryIntoHigh);
+
+  ALU16C(x=x[16..31], y=y[16..31], zx=zx, nx=nx, zy=zy, ny=ny, f=f, no=no, cIn=carryIntoHigh, out=high, zr=zrHigh, ng=resSign, cOut=carryHigh);
+
+   And(a=zrLow, b=zrHigh, out=zr);
+
+  Mux16(a=low,  b=low,  sel=false, out=out[0..15]);
+  Mux16(a=high, b=high, sel=false, out=out[16..31]);
+  Or(a=resSign, b=false, out=ng);
+
+    
+    Xor(a=x[31], b=y[31], out=signsDiff);
+    Not(in=signsDiff, out=signsEqual);
+    Xor(a=resSign, b=x[31], out=resultSignDiff);
+    And(a=signsEqual, b=resultSignDiff, out=overflowCore);
+    And(a=f, b=overflowCore, out=overflow);
+}
