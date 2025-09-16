@@ -1,14 +1,15 @@
+// Dibujar letra A en la pantalla
 @SCREEN
 D=A
 @PosPantalla
 M=D
 
 // Línea 1: parte superior del triángulo
+@4080
+D=A
 @PosPantalla
-D=M
-@960
-A=D
-M=A      // Escribir el patrón en la pantalla
+A=M
+M=D      // Escribir el patrón en la pantalla
 
 @PosPantalla
 D=M
@@ -18,10 +19,7 @@ D=D+A
 M=D
 
 // Línea 2: expandir triángulo
-@PosPantalla
-D=M
-A=D
-@2016
+@8184
 D=A
 @PosPantalla
 A=M
@@ -35,10 +33,7 @@ D=D+A
 M=D
 
 // Línea 3: lados de la A
-@PosPantalla
-D=M
-A=D
-@3084
+@16380
 D=A
 @PosPantalla
 A=M
@@ -52,10 +47,196 @@ D=D+A
 M=D
 
 // Línea 4: lados más anchos
+@30750
+D=A
+@PosPantalla
+A=M
+M=D     // Escribir el patrón en la pantalla
+
 @PosPantalla
 D=M
-A=D
-@6150
+@32
+D=D+A
+@PosPantalla
+M=D
+
+// Línea 5: barra horizontal de la A
+@28686
+D=A
+@PosPantalla
+A=M
+M=D     // Escribir el patrón en la pantalla
+
+@PosPantalla
+D=M
+@32
+D=D+A
+@PosPantalla
+M=D
+
+// Línea 6: lados después de la barra
+@24582
+D=A
+@PosPantalla
+A=M
+M=D     // Escribir el patrón en la pantalla
+
+@PosPantalla
+D=M
+@32
+D=D+A
+@PosPantalla
+M=D
+
+// Línea 7: lados después de la barra
+@24582
+D=A
+@PosPantalla
+A=M
+M=D     // Escribir el patrón en la pantalla
+
+@PosPantalla
+D=M
+@32
+D=D+A
+@PosPantalla
+M=D
+
+// Línea 8: lados después de la barra
+@24582
+D=A
+@PosPantalla
+A=M
+M=D     // Escribir el patrón en la pantalla
+
+@PosPantalla
+D=M
+@32
+D=D+A
+@PosPantalla
+M=D
+
+// Línea 9: barra completa horizontal
+@32766
+D=A
+@PosPantalla
+A=M
+M=D     // Escribir el patrón en la pantalla
+
+@PosPantalla
+D=M
+@32
+D=D+A
+@PosPantalla
+M=D
+
+// Línea 10: barra completa horizontal
+@32766
+D=A
+@PosPantalla
+A=M
+M=D     // Escribir el patrón en la pantalla
+
+@PosPantalla
+D=M
+@32
+D=D+A
+@PosPantalla
+M=D
+
+// Línea 11: lados después de barra horizontal
+@24582
+D=A
+@PosPantalla
+A=M
+M=D     // Escribir el patrón en la pantalla
+
+@PosPantalla
+D=M
+@32
+D=D+A
+@PosPantalla
+M=D
+
+// Línea 12: lados después de barra horizontal
+@24582
+D=A
+@PosPantalla
+A=M
+M=D     // Escribir el patrón en la pantalla
+
+@PosPantalla
+D=M
+@32
+D=D+A
+@PosPantalla
+M=D
+
+// Línea 13: lados después de barra horizontal
+@24582
+D=A
+@PosPantalla
+A=M
+M=D     // Escribir el patrón en la pantalla
+
+@PosPantalla
+D=M
+@32
+D=D+A
+@PosPantalla
+M=D
+
+// Línea 14: lados después de barra horizontal
+@24582
+D=A
+@PosPantalla
+A=M
+M=D     // Escribir el patrón en la pantalla
+
+@PosPantalla
+D=M
+@32
+D=D+A
+@PosPantalla
+M=D
+
+// Línea 15: base de la A
+@4081
+D=A
+D=-D    // Negativo para las últimas líneas
+@PosPantalla
+A=M
+M=D     // Escribir el patrón invertido en la pantalla
+
+@PosPantalla
+D=M
+@32
+D=D+A
+@PosPantalla
+M=D
+
+// Línea 16: base de la A
+@4081
+D=A
+D=-D    // Negativo para las últimas líneas
+@PosPantalla
+A=M
+M=D     // Escribir el patrón invertido en la pantalla
+
+// Bucle infinito para mantener la imagen
+(END)
+@END
+0;JMP
+
+@PosPantalla
+D=M
+@32
+D=D+A
+@PosPantalla
+M=D
+
+// Línea 4: lados más anchos
+@4080
 D=A
 @PosPantalla
 A=M
@@ -72,11 +253,8 @@ M=D
 @PosPantalla
 D=M
 A=D
-@8190
-D=A
-@PosPantalla
-A=M
-M=D     // Escribir el patrón en la pantalla
+@28686
+M=A     // Escribir el patrón en la pantalla
 
 @PosPantalla
 D=M
@@ -89,11 +267,8 @@ M=D
 @PosPantalla
 D=M
 A=D
-@12294
-D=A
-@PosPantalla
-A=M
-M=D     // Escribir el patrón en la pantalla
+@24582
+M=A     // Escribir el patrón en la pantalla
 
 @PosPantalla
 D=M
@@ -102,23 +277,140 @@ D=D+A
 @PosPantalla
 M=D
 
-// Línea 7: base de la A
+// Línea 7: lados después de la barra
 @PosPantalla
 D=M
 A=D
 @24582
-D=A
+M=A     // Escribir el patrón en la pantalla
+
 @PosPantalla
-A=M
-M=D     // Escribir el patrón en la pantalla
+D=M
+@32
+D=D+A
+@PosPantalla
+M=D
+
+// Línea 8: lados después de la barra
+@PosPantalla
+D=M
+A=D
+@24582
+M=A     // Escribir el patrón en la pantalla
+
+@PosPantalla
+D=M
+@32
+D=D+A
+@PosPantalla
+M=D
+
+// Línea 9: barra completa horizontal
+@PosPantalla
+D=M
+A=D
+@32766
+M=A     // Escribir el patrón en la pantalla
+
+@PosPantalla
+D=M
+@32
+D=D+A
+@PosPantalla
+M=D
+
+// Línea 10: barra completa horizontal
+@PosPantalla
+D=M
+A=D
+@32766
+M=A     // Escribir el patrón en la pantalla
+
+@PosPantalla
+D=M
+@32
+D=D+A
+@PosPantalla
+M=D
+
+// Línea 11: lados después de barra horizontal
+@PosPantalla
+D=M
+A=D
+@24582
+M=A     // Escribir el patrón en la pantalla
+
+@PosPantalla
+D=M
+@32
+D=D+A
+@PosPantalla
+M=D
+
+// Línea 12: lados después de barra horizontal
+@PosPantalla
+D=M
+A=D
+@24582
+M=A     // Escribir el patrón en la pantalla
+
+@PosPantalla
+D=M
+@32
+D=D+A
+@PosPantalla
+M=D
+
+// Línea 13: lados después de barra horizontal
+@PosPantalla
+D=M
+A=D
+@24582
+M=A     // Escribir el patrón en la pantalla
+
+@PosPantalla
+D=M
+@32
+D=D+A
+@PosPantalla
+M=D
+
+// Línea 14: lados después de barra horizontal
+@PosPantalla
+D=M
+A=D
+@24582
+M=A     // Escribir el patrón en la pantalla
+
+@PosPantalla
+D=M
+@32
+D=D+A
+@PosPantalla
+M=D
+
+// Línea 15: base de la A (invertida)
+@PosPantalla
+D=M
+A=D
+@-4081
+M=A     // Escribir el patrón invertido en la pantalla
+
+@PosPantalla
+D=M
+@32
+D=D+A
+@PosPantalla
+M=D
+
+// Línea 16: base de la A (invertida)
+@PosPantalla
+D=M
+A=D
+@-4081
+M=A     // Escribir el patrón invertido en la pantalla
 
 // Bucle infinito para mantener la imagen
 (END)
 @END
 0;JMP
-
-
-/// tareas
-// ARREGLAR CODIGO VERCUADRO
-//  PINTAR EN POCISION X,Y
-// HACER LETRA A
